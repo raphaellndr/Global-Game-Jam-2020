@@ -18,6 +18,7 @@ public class PlateformeS : ActiveObject
     {
         moving = false;
         initialPos = transform.position;
+        destination = initialPos + new Vector2(mouvementX, mouvementY);
     }
 
     void Update()
