@@ -18,7 +18,7 @@ public class PlateformeAR : ActiveObject
     private void Start()
     {
         initialPos = transform.position;
-        destination = initialPos + new Vector2(0.5f, 0f);
+        destination = initialPos + new Vector2(mouvementX, mouvementY);
     }
 
     void Update()

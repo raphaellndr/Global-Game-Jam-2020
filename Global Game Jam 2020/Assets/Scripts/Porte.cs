@@ -9,6 +9,9 @@ public class Porte : ActiveObject
     private Vector2 initialPos;
     private Vector2 destination;
 
+    [SerializeField]
+    private float mouvementY;   //le mouvement en Y
+
     private void Start()
     {
         moving = false;
@@ -23,7 +26,7 @@ public class Porte : ActiveObject
     public void switchDestination()
     {
         if (!moving) moving = true;
-        if(State)destination = initialPos + new Vector2(0,0.5f);
+        if(State)destination = initialPos + new Vector2(0, mouvementY);
         else destination = initialPos;
     }
 
