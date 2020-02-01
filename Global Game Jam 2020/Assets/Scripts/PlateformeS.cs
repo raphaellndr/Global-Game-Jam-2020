@@ -9,6 +9,11 @@ public class PlateformeS : ActiveObject
     private Vector2 initialPos;
     private Vector2 destination;
 
+    [SerializeField]
+    private float mouvementX;   //le mouvement en X
+
+    [SerializeField]
+    private float mouvementY;   //le mouvement en Y
     private void Start()
     {
         moving = false;
@@ -23,7 +28,7 @@ public class PlateformeS : ActiveObject
     public void switchDestination()
     {
         if (!moving) moving = true;
-        if (State) destination = initialPos + new Vector2(0.5f, 0f);
+        if (State) destination = initialPos + new Vector2(mouvementX, mouvementY);
         else destination = initialPos;
     }
 
