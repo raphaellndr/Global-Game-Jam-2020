@@ -20,12 +20,6 @@ public class PlayerController : MonoBehaviour
 
     private bool isFacingRight = true;
 
-    // shooting 
-    public GameObject projectileToRight, projectileToLeft;
-    Vector2 projectilePosition;
-    public float fireRate = 0.5f;
-    float nextFire = 0.5f;
-
     // health
     public int health = 100;
     public Transform fullFillAmount;
@@ -49,20 +43,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // shooting
-        if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > nextFire)
-        {
-            nextFire = Time.time + fireRate;
-            Fire();
-        }
-        /*// shooting
-        if (Input.GetKeyDown(KeyCode.E) && Time.time > nextFire)
-        {
-            nextFire = Time.time + fireRate;
-            Fire();
-        }*/
-
-
         // moving 
         isGrounded = Physics2D.OverlapCircle(feetPosition.position, checkRadius, groundLayerMask);
 
@@ -103,37 +83,5 @@ public class PlayerController : MonoBehaviour
         {
             //do something
         }        
-    }
-
-    void Fire()
-    {
-        Debug.Log("Firing");
-        projectilePosition = transform.position;
-
-        if (isFacingRight)
-        {
-            projectilePosition += new Vector2(1f, 0f);
-            GameObject projectile = Instantiate(projectileToRight, projectilePosition, Quaternion.identity);
-            projectile.GetComponent<SpriteRenderer>().color = Color.green;
-        }
-        else
-        {
-            projectilePosition += new Vector2(-1f, 0f);
-            GameObject projectile = Instantiate(projectileToLeft, projectilePosition, Quaternion.identity);
-            projectile.GetComponent<SpriteRenderer>().color = Color.green;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Projectile")
-        {
-            this.health -= 10;
-            Mathf.Clamp(this.health, 0, 100);
-            Vector2 newScale = this.fullFillAmount.localScale;
-            Mathf.Clamp01(newScale.x);
-            newScale.x -= amount / 10;
-            this.fullFillAmount.localScale = newScale;
-        }
     }
 }
