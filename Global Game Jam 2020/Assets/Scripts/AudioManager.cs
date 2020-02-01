@@ -71,7 +71,7 @@ public class AudioManager : MonoBehaviour
         s.source.Stop();
     }
 
-    void Update()
+    /*void Update()
     {
         foreach (Sound s in sounds)
         {
@@ -94,7 +94,7 @@ public class AudioManager : MonoBehaviour
                 s.source.pitch = 1f;
             }
         }
-    }
+    }*/
 
     public void SetVolume(float volume)
     {
