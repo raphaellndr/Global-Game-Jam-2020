@@ -12,8 +12,8 @@ public class AudioManager : MonoBehaviour
 
     List<Sound> tmp = new List<Sound>();
 
-    private float minPitch = 0.5f;
-    private float maxPitch = 1f;
+    /*private float minPitch = 0.5f;
+    private float maxPitch = 1f;*/
 
     public static AudioManager instance; //static reference to the current used AudioManager on the scene
 

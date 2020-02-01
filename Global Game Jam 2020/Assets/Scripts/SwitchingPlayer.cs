@@ -5,8 +5,6 @@ using Cinemachine;
 
 public class SwitchingPlayer : MonoBehaviour
 {
-    int numberOfPlayers = 2;
-
     public GameObject[] players;
     public PlayerController[] playersController;
     Transform followTarget;
