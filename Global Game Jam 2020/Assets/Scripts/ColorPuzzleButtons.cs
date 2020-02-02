@@ -12,7 +12,6 @@ public class ColorPuzzleButtons : MonoBehaviour
     private float rdmR;
     private float rdmG;
     private float rdmB;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +32,7 @@ public class ColorPuzzleButtons : MonoBehaviour
     void Update()
     {
         activeColor();
+
     }
 
     public void activeColor()

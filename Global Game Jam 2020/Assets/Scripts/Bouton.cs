@@ -8,8 +8,10 @@ public class Bouton : ActiveObject
 
     void OnTriggerStay2D(Collider2D collider)
     {
+        Debug.Log("a");
         if (job == collider.gameObject.GetComponent<PlayerController>().job && job == !GameObject.Find("Canvas").GetComponent<SwitchingPlayer>().player1IsActivated)
         {
+            Debug.Log("b");
             if (Input.GetKeyDown(KeyCode.E))
             {
                 switchState();
