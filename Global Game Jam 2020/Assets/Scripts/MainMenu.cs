@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Transit");
         //FindObjectOfType<AudioManager>().Stop("MainTheme");
     }
 }
