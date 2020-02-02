@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    //public Sound[] sounds;
-
     public List<Sound> sounds;
 
     List<Sound> tmp = new List<Sound>();
@@ -95,33 +93,4 @@ public class AudioManager : MonoBehaviour
             }
         }
     }*/
-
-    public void SetVolume(float volume)
-    {
-        foreach (Sound s in sounds)
-        {
-            s.source.volume = volume;
-            PlayerPrefs.SetFloat("CurrentVolume", volume);
-        }
-    }
-
-    public void Mute(bool mute)
-    {
-        sounds.RemoveAll(item => item.source == null);
-
-        foreach (Sound s in sounds)
-        {
-            if (mute)
-            {
-                s.source.volume = 0f;
-            }
-            else
-            {
-                float currentVolume = PlayerPrefs.GetFloat("CurrentVolume", 0);
-                //Debug.Log("s.source" + s.source);
-                //Debug.Log("s.source.volume" + s.source.volume);
-                s.source.volume = currentVolume;
-            }
-        }
-    }
 }
