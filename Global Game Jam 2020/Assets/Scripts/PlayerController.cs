@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     private bool isFacingRight = true;
 
+    public bool job; //false>mécano         true>scientifique
+
     // health
     public int health = 100;
     public Transform fullFillAmount;
