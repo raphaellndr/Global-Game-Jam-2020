@@ -6,6 +6,16 @@ public class Bouton : ActiveObject
 {
     public bool job; //false>mécano         true>scientifique
 
+    [SerializeField]
+    public GameObject interactIcone;
+
+    void Start()
+    {
+        interactIcone = Instantiate(interactIcone);
+        interactIcone.transform.position = transform.position + new Vector3(0f, 1.5f, 0f);
+        interactIcone.SetActive(false);
+    }
+
     void OnTriggerStay2D(Collider2D collider)
     {
         if (job == collider.gameObject.GetComponent<PlayerController>().job && job == !GameObject.Find("Canvas").GetComponent<SwitchingPlayer>().player1IsActivated)
@@ -21,10 +31,13 @@ public class Bouton : ActiveObject
         }
     }
 
-    /*void OnMouseDown()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }*/
+        interactIcone.SetActive(true);
+    }
 
-
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        interactIcone.SetActive(false);
+    }
 }
