@@ -5,9 +5,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float speed;
+    public float MvtSpeed;
     public float jumpForce;
     private float moveInput;
+
+    [SerializeField]
+    private float sprintSpeed;
+
+    private Animator myAnimator;
 
     public bool isGrounded;
     public Transform feetPosition;
@@ -18,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime;
 
-    private bool isFacingRight = true;
+    private bool facingRight;
 
     public bool job; //false>mécano         true>scientifique
 
@@ -29,18 +34,32 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        facingRight = true;
         rb = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
         amount = fullFillAmount.localScale.x;
     }
 
     private void FixedUpdate()
     {
-        moveInput = Input.GetAxis("Horizontal");
+        float horizontal = Input.GetAxis("Horizontal");
 
-        if (rb.bodyType != RigidbodyType2D.Static)
+        /*if (rb.bodyType != RigidbodyType2D.Static)
         {
-            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-        }
+            rb.velocity = new Vector2(horizontal * MvtSpeed, rb.velocity.y);
+        }*/
+
+        isGrounded = IsGrounded();
+
+        HandleMovement(horizontal, MvtSpeed);
+
+        Sprint(horizontal);
+
+        Flip(horizontal);
+
+        HandleLayers();
+
+
     }
 
     void Update()
@@ -53,6 +72,7 @@ public class PlayerController : MonoBehaviour
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
+            myAnimator.ResetTrigger("jump");
         }
 
         if (Input.GetKey(KeyCode.Space) && isJumping == true)
@@ -71,19 +91,79 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
         }
 
-        if (moveInput < 0)
+        if (isGrounded && isJumping)
         {
-            isFacingRight = false;
+            isGrounded = false;
+            myAnimator.SetTrigger("jump");
         }
-        if (moveInput > 0)
-        {
-            isFacingRight = true;
-        }        
+
 
         // death 
         if (this.health == 0)
         {
             //do something
-        }        
+        }
+    }
+
+    private void HandleMovement(float horizontal, float speed)
+    {
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        myAnimator.SetFloat("speed", Mathf.Abs(horizontal * speed));
+    }
+
+    private void Sprint(float horizontal)
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            HandleMovement(horizontal, sprintSpeed);
+        }
+
+    }
+
+    private void Flip(float horizontal)
+    {
+        if (horizontal > 0 && !facingRight || horizontal < 0 && facingRight)
+        {
+            facingRight = !facingRight;
+
+            //On choppe le scale actuel
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1; //on le flip
+
+            //on change le scale actuel par le scale flippé
+            transform.localScale = theScale;
+        }
+    }
+
+      private bool IsGrounded()
+      {
+          if (rb.velocity.y <= 0)
+          {
+              myAnimator.SetBool("land", true);
+              Collider2D[] colliders = Physics2D.OverlapCircleAll(feetPosition.position, checkRadius);
+
+              for (int i = 0; i < colliders.Length; i++)
+              {
+                  if (colliders[i].gameObject != gameObject)
+                  {
+                      myAnimator.ResetTrigger("jump");
+                      myAnimator.SetBool("land", false);
+                      return true;
+                  }
+              }
+          }
+          return false;
+      } 
+
+    private void HandleLayers()
+    {
+        if (!isGrounded)
+        {
+            myAnimator.SetLayerWeight(1, 1);
+        }
+        else
+        {
+            myAnimator.SetLayerWeight(1, 0);
+        }
     }
 }
