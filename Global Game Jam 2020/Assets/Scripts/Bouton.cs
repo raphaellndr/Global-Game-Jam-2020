@@ -19,7 +19,7 @@ public class Bouton : ActiveObject
     IEnumerator detectKey(GameObject player)
     {
         while (1==1) {
-            if (job == player.GetComponent<PlayerController>().job && job == !GameObject.Find("Canvas").GetComponent<SwitchingPlayer>().player1IsActivated)
+            if (Input.GetKeyDown(KeyCode.E) && job == player.GetComponent<PlayerController>().job && job == !GameObject.Find("Canvas").GetComponent<SwitchingPlayer>().player1IsActivated)
             {
                 switchState();
                 foreach (ActiveObject l in Link)
@@ -34,12 +34,12 @@ public class Bouton : ActiveObject
     private void OnTriggerEnter2D(Collider2D collision)
     {
         interactIcone.SetActive(true);
-        StartCoroutine("detectKey()",collision.gameObject);
+        StartCoroutine("detectKey",collision.gameObject);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         interactIcone.SetActive(false);
-        StopCoroutine("detectKey()");
+        StopCoroutine("detectKey");
     }
 }
