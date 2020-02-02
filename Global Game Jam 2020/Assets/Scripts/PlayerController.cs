@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float sprintSpeed;
 
+    private SpriteRenderer sr;
     private Animator myAnimator;
 
     public bool isGrounded;
@@ -35,6 +36,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         facingRight = true;
+        sr = GetComponent<SpriteRenderer>();
+        sr.flipX = false;
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         amount = fullFillAmount.localScale.x;
@@ -126,12 +129,7 @@ public class PlayerController : MonoBehaviour
         {
             facingRight = !facingRight;
 
-            //On choppe le scale actuel
-            Vector3 theScale = transform.localScale;
-            theScale.x *= -1; //on le flip
-
-            //on change le scale actuel par le scale flippé
-            transform.localScale = theScale;
+            sr.flipX = !sr.flipX;
         }
     }
 
