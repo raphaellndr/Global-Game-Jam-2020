@@ -5,26 +5,14 @@ using UnityEngine;
 public class Bouton : ActiveObject
 {
     public bool job; //false>mécano         true>scientifique
-
-    void OnTriggerStay2D(Collider2D collider)
+    void OnMouseDown()
     {
-        if (job == collider.gameObject.GetComponent<PlayerController>().job && job == !GameObject.Find("Canvas").GetComponent<SwitchingPlayer>().player1IsActivated)
+        switchState();
+        foreach(ActiveObject l in Link)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                switchState();
-                foreach (ActiveObject l in Link)
-                {
-                    l.switchState();
-                }
-            }
+            l.switchState();
         }
     }
-
-    /*void OnMouseDown()
-    {
-        
-    }*/
 
 
 }
