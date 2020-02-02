@@ -332,6 +332,8 @@ MonoBehaviour:
   link:
   - {fileID: 1419830614}
   job: 0
+  interactIcone: {fileID: 4225586854595218184, guid: 041e8836e5a007449877750b43ff0f58,
+    type: 3}
 --- !u!61 &13655252
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -549,6 +551,8 @@ MonoBehaviour:
   - {fileID: 1433918547}
   - {fileID: 1563647108}
   job: 0
+  interactIcone: {fileID: 4225586854595218184, guid: 041e8836e5a007449877750b43ff0f58,
+    type: 3}
 --- !u!212 &45613865
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53775,6 +53779,8 @@ MonoBehaviour:
   link:
   - {fileID: 580870190}
   job: 1
+  interactIcone: {fileID: 4225586854595218184, guid: 041e8836e5a007449877750b43ff0f58,
+    type: 3}
 --- !u!212 &1010958425
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -56246,6 +56252,7 @@ MonoBehaviour:
   - {fileID: 1563647108}
   - {fileID: 982854229}
   job: 0
+  interactIcone: {fileID: 45613863}
 --- !u!212 &1580273373
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -58070,6 +58077,8 @@ MonoBehaviour:
   - {fileID: 453707261}
   - {fileID: 924816933}
   job: 0
+  interactIcone: {fileID: 4225586854595218184, guid: 041e8836e5a007449877750b43ff0f58,
+    type: 3}
 --- !u!212 &2083803299
 SpriteRenderer:
   m_ObjectHideFlags: 0
