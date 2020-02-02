@@ -216,7 +216,6 @@ GameObject:
   - component: {fileID: 161206072}
   - component: {fileID: 161206071}
   - component: {fileID: 161206075}
-  - component: {fileID: 161206076}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -315,19 +314,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 161206070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe0bd6b5d5537b6488d84faf4fc5157c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &161206076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 161206070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe0bd6b5d5537b6488d84faf4fc5157c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a5929780e65bdc42ba7b76f5d43a77f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &173544429
@@ -3005,7 +2992,7 @@ Animator:
   m_GameObject: {fileID: 1065276536}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1d61f36b442089e4e9c6987da57686c8, type: 2}
+  m_Controller: {fileID: 9100000, guid: 845a86da2745ec84f8e0acd268903add, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3135,7 +3122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1524694931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edfe519410523464789ea110bdd260d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cded8670acfebc4583b582b4fb0caea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
@@ -3706,6 +3693,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2280640558583378704, guid: d06a4d27751ffab4c81d20f746c7231b,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280640558583378704, guid: d06a4d27751ffab4c81d20f746c7231b,
+        type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280640558583378704, guid: d06a4d27751ffab4c81d20f746c7231b,
+        type: 3}
+      propertyPath: sounds.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280640558583378704, guid: d06a4d27751ffab4c81d20f746c7231b,
+        type: 3}
+      propertyPath: sounds.Array.data[0].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280640558583378704, guid: d06a4d27751ffab4c81d20f746c7231b,
+        type: 3}
+      propertyPath: sounds.Array.data[0].name
+      value: MainTheme
+      objectReference: {fileID: 0}
     - target: {fileID: 2280640558583378705, guid: d06a4d27751ffab4c81d20f746c7231b,
         type: 3}
       propertyPath: m_LocalPosition.x
