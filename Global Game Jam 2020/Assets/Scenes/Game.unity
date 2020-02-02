@@ -130,10 +130,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 13655250}
-  - component: {fileID: 13655249}
   - component: {fileID: 13655251}
   - component: {fileID: 13655252}
   - component: {fileID: 13655253}
+  - component: {fileID: 13655249}
   m_Layer: 0
   m_Name: SMDoorButton
   m_TagString: Untagged
@@ -182,11 +182,11 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7872161428292011432, guid: 8a937a5ecd24f3c49af09436b7ec4251,
     type: 3}
-  m_Color: {r: 1, g: 0, b: 0.9059248, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.1875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -220,7 +220,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   skin:
-  - {fileID: 21300000, guid: 6ccf13052d14ece48aeea9a63ea4c722, type: 3}
+  - {fileID: 7872161428292011432, guid: 8a937a5ecd24f3c49af09436b7ec4251, type: 3}
+  - {fileID: 6787200095303531231, guid: 8a937a5ecd24f3c49af09436b7ec4251, type: 3}
   link:
   - {fileID: 1419830614}
   job: 0
@@ -242,7 +243,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1.1875}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1.1875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -17897,7 +17898,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   skin:
-  - {fileID: 21300000, guid: 6ccf13052d14ece48aeea9a63ea4c722, type: 3}
+  - {fileID: -4958286785317219636, guid: 8a937a5ecd24f3c49af09436b7ec4251, type: 3}
+  - {fileID: 3000179875333827876, guid: 8a937a5ecd24f3c49af09436b7ec4251, type: 3}
   link:
   - {fileID: 580870190}
   job: 1
@@ -17942,7 +17944,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -4958286785317219636, guid: 8a937a5ecd24f3c49af09436b7ec4251,
     type: 3}
-  m_Color: {r: 1, g: 0, b: 0.9059248, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
