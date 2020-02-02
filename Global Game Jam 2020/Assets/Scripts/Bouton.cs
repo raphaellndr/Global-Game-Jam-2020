@@ -5,14 +5,21 @@ using UnityEngine;
 public class Bouton : ActiveObject
 {
     public bool job; //false>mécano         true>scientifique
+    
+    [SerializeField]
+    public GameObject interactIcone;
 
-    void OnTriggerStay2D(Collider2D collider)
+    void Start()
     {
-        Debug.Log("a");
-        if (job == collider.gameObject.GetComponent<PlayerController>().job && job == !GameObject.Find("Canvas").GetComponent<SwitchingPlayer>().player1IsActivated)
-        {
-            Debug.Log("b");
-            if (Input.GetKeyDown(KeyCode.E))
+        interactIcone = Instantiate(interactIcone);
+        interactIcone.transform.position = transform.position + new Vector3(0f, 1.5f, 0f);
+        interactIcone.SetActive(false);
+    }
+
+    IEnumerator detectKey(GameObject player)
+    {
+        while (1==1) {
+            if (job == player.GetComponent<PlayerController>().job && job == !GameObject.Find("Canvas").GetComponent<SwitchingPlayer>().player1IsActivated)
             {
                 switchState();
                 foreach (ActiveObject l in Link)
@@ -20,13 +27,19 @@ public class Bouton : ActiveObject
                     l.switchState();
                 }
             }
+            yield return new WaitForSeconds(0.0005f);
         }
     }
-
-    /*void OnMouseDown()
+    
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }*/
+        interactIcone.SetActive(true);
+        StartCoroutine("detectKey()",collision.gameObject);
+    }
 
-
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        interactIcone.SetActive(false);
+        StopCoroutine("detectKey()");
+    }
 }
