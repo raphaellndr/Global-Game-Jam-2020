@@ -15,7 +15,7 @@ public class GoDown : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && collider.gameObject.tag == "Player")
         {
             collider.transform.position = downPosition - Vector2.up;
         }
