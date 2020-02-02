@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GoDown : MonoBehaviour
 {
-    Vector2 downPosition;
-    public GameObject down;
+    Vector2 upPosition;
+    public GameObject up;
 
     // Start is called before the first frame update
     void Start()
     {
-        downPosition = down.transform.position;
+        upPosition = up.transform.position;
     }
 
     IEnumerator detectKey(GameObject player)
@@ -19,7 +19,7 @@ public class GoDown : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) && player.tag == "Player")
             {
-                player.transform.position = downPosition - Vector2.up;
+                player.transform.position = upPosition - Vector2.up;
             }
             yield return new WaitForSeconds(0.0005f);
         }
