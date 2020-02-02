@@ -21,7 +21,6 @@ public class GazScript : MonoBehaviour
     void OnTriggerExit2D(Collider2D collider)
     {
         CancelInvoke("Suffocate");
-
         if (collider.gameObject.tag == "Player")
         {
             InvokeRepeating("Healing", 1, 1);
@@ -30,8 +29,6 @@ public class GazScript : MonoBehaviour
 
     void Suffocate()
     {
-        Debug.Log(playerController.health);
-
         Mathf.Clamp(playerController.health, 0, 100);
         playerController.health -= 20;
 
@@ -51,8 +48,6 @@ public class GazScript : MonoBehaviour
 
     void Healing()
     {
-        Debug.Log(playerController.health);
-
         Mathf.Clamp(playerController.health, 0, 100);
         playerController.health += 20;
 
@@ -66,6 +61,14 @@ public class GazScript : MonoBehaviour
             Debug.Log(playerController.health);
 
             CancelInvoke("Healing");
+        }
+    }
+
+    void Update()
+    {
+        if (playerController.health >= 100)
+        {
+            playerController.health = 100;
         }
     }
 }

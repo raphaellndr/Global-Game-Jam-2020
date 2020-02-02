@@ -24,7 +24,7 @@ public class Swapping : MonoBehaviour
         Vector2 player1Position;
         Vector2 player2Position;
 
-        if (Input.GetKeyDown(KeyCode.B) && canSwap == true)
+        if (Input.GetKeyDown(KeyCode.R) && canSwap == true)
         {
             timerBar.fillAmount = 0;
             timeBetweenSwapCounter = timeBetweenSwap;
