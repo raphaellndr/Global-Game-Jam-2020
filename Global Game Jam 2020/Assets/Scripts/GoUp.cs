@@ -13,11 +13,24 @@ public class GoUp : MonoBehaviour
         upPosition = up.transform.position;
     }
 
-    void OnTriggerStay2D(Collider2D collider)
-    {
-        if (Input.GetKeyDown(KeyCode.E) && collider.gameObject.tag == "Player")
+    IEnumerator detectKey(GameObject player) {
+        while(1==1)
         {
-            collider.transform.position = upPosition - Vector2.up;
+            if (Input.GetKeyDown(KeyCode.E) && player.tag == "Player")
+            {
+                player.transform.position = upPosition - Vector2.up;
+            }
+            yield return new WaitForSeconds(0.0005f);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        StartCoroutine("detectKey", collision.gameObject);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        StopCoroutine("detectKey");
     }
 }
