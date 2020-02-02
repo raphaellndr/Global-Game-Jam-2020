@@ -21,7 +21,6 @@ public class GazScript : MonoBehaviour
     void OnTriggerExit2D(Collider2D collider)
     {
         CancelInvoke("Suffocate");
-
         if (collider.gameObject.tag == "Player")
         {
             InvokeRepeating("Healing", 1, 1);
