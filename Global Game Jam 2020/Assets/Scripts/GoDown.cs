@@ -17,7 +17,7 @@ public class GoDown : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            collider.transform.position = downPosition - Vector2.up;
+            collider.transform.position = downPosition - Vector2.up + Vector2.right;
         }
     }
 }

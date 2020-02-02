@@ -17,7 +17,7 @@ public class GoUp : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            collider.transform.position = upPosition - Vector2.up /*/ 0.75f*/;
+            collider.transform.position = upPosition - Vector2.up /*/ 0.75f*/ + Vector2.right;
         }
     }
 }
