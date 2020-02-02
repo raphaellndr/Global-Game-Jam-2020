@@ -21,9 +21,6 @@ public class SwitchingPlayer : MonoBehaviour
         followTarget = players[0].transform;
         cam.Follow = followTarget;
 
-        //rb1 = players[0].GetComponent<Rigidbody2D>();
-        //rb2 = players[1].GetComponent<Rigidbody2D>();
-
         rb1.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb2.constraints = RigidbodyConstraints2D.FreezePositionX;
 
