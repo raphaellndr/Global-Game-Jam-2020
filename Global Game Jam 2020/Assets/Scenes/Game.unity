@@ -231,7 +231,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2578,7 +2578,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 14
-      m_TileSpriteIndex: 14
+      m_TileSpriteIndex: 15
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9526,7 +9526,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 13
-      m_TileSpriteIndex: 13
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -11386,14 +11386,14 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 8568142618917566389, guid: acc582f59f1eede48b31fa62d932540e,
       type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 2727717926491812537, guid: acc582f59f1eede48b31fa62d932540e,
       type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 4583682835345809999, guid: acc582f59f1eede48b31fa62d932540e,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 1175
     m_Data:
@@ -12390,7 +12390,7 @@ GameObject:
   - component: {fileID: 1010958424}
   - component: {fileID: 1010958423}
   m_Layer: 0
-  m_Name: SMDoorButton (1)
+  m_Name: ValveDoorMM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12406,7 +12406,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -12438,7 +12438,7 @@ MonoBehaviour:
   skin:
   - {fileID: 21300000, guid: 6ccf13052d14ece48aeea9a63ea4c722, type: 3}
   link:
-  - {fileID: 1419830614}
+  - {fileID: 580870190}
 --- !u!212 &1010958425
 SpriteRenderer:
   m_ObjectHideFlags: 0
